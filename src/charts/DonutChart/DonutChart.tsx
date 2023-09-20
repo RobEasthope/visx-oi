@@ -6,10 +6,9 @@ import { GradientPinkBlue } from '@visx/gradient';
 import letterFrequency, {
   LetterFrequency,
 } from '@visx/mock-data/lib/mocks/letterFrequency';
-import browserUsage, {
-  BrowserUsage as Browsers,
-} from '@visx/mock-data/lib/mocks/browserUsage';
+import { BrowserUsage as Browsers } from '@visx/mock-data/lib/mocks/browserUsage';
 import { animated, useTransition, interpolate } from '@react-spring/web';
+import { DonutChartData } from './DonutChart.data';
 
 // data and types
 type BrowserNames = keyof Browsers;
@@ -20,12 +19,12 @@ interface BrowserUsage {
 }
 
 const letters: LetterFrequency[] = letterFrequency.slice(0, 4);
-const browserNames = Object.keys(browserUsage[0]).filter(
+const browserNames = Object.keys(DonutChartData).filter(
   (k) => k !== 'date',
 ) as BrowserNames[];
 const browsers: BrowserUsage[] = browserNames.map((name) => ({
   label: name,
-  usage: Number(browserUsage[0][name]),
+  usage: Number(DonutChartData[name]),
 }));
 
 // accessor functions
