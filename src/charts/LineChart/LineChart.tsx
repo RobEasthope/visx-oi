@@ -6,7 +6,7 @@ import {
   Tooltip,
   XYChart,
 } from '@visx/xychart';
-import { data } from './data';
+import { data } from './LineChart.data';
 import './LineChart.css';
 
 const tickLabelOffset = 10;

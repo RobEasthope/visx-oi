@@ -1,6 +1,6 @@
-type DataProps = { x: string; y: number }[];
+type LineChartDataProps = { x: string; y: number }[];
 
-export const data: DataProps = [
+export const LineChartData: LineChartDataProps = [
   {
     x: '2018-03-01',
     y: 30,
