@@ -82,7 +82,7 @@ const accessors = {
   yAccessor: (d) => d.y,
 };
 
-const LineChart = () => {
+export const LineChart = () => {
   return (
     <ChartContainer>
       <XYChart
