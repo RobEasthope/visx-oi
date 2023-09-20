@@ -8,7 +8,7 @@ import {
   XYChart,
 } from '@visx/xychart';
 
-const data1 = [
+const data = [
   {
     x: '2018-03-01',
     y: 30,
@@ -120,7 +120,7 @@ export const LineChart = () => {
         <AnimatedLineSeries
           stroke="#008561"
           dataKey="primary_line"
-          data={data1}
+          data={data}
           {...accessors}
         />
         <Tooltip
