@@ -1,4 +1,3 @@
-import './styles.css';
 import styled from 'styled-components';
 import { format } from 'date-fns';
 import {
