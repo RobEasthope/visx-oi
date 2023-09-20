@@ -120,37 +120,6 @@ export function DonutChart({
             />
           )}
         </Pie>
-        <Pie
-          data={
-            selectedAlphabetLetter
-              ? letters.filter(
-                  ({ letter }) => letter === selectedAlphabetLetter,
-                )
-              : letters
-          }
-          pieValue={frequency}
-          pieSortValues={() => -1}
-          outerRadius={radius - donutThickness * 1.3}
-        >
-          {(pie) => (
-            <AnimatedPie<LetterFrequency>
-              {...pie}
-              animate={animate}
-              getKey={({ data: { letter } }) => letter}
-              onClickDatum={({ data: { letter } }) =>
-                animate &&
-                setSelectedAlphabetLetter(
-                  selectedAlphabetLetter && selectedAlphabetLetter === letter
-                    ? null
-                    : letter,
-                )
-              }
-              getColor={({ data: { letter } }) =>
-                getLetterFrequencyColor(letter)
-              }
-            />
-          )}
-        </Pie>
       </Group>
       {animate && (
         <text
