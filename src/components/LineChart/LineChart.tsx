@@ -16,7 +16,7 @@ const accessors = {
   yAccessor: (d) => d.y,
 };
 
-export const LineChart = () => {
+export const LineChart = ({ data }) => {
   return (
     <div className="chart-container">
       <XYChart
