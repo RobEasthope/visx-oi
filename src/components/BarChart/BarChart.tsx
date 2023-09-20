@@ -2,6 +2,7 @@ import { letterFrequency } from '@visx/mock-data';
 import { Group } from '@visx/group';
 import { Bar } from '@visx/shape';
 import { scaleLinear, scaleBand } from '@visx/scale';
+import { AxisLeft, AxisBottom } from '@vx/axis';
 
 // We'll use some mock data from `@visx/mock-data` for this.
 const data = letterFrequency;
@@ -16,8 +17,8 @@ const xMax = width - margin.left - margin.right;
 const yMax = height - margin.top - margin.bottom;
 
 // We'll make some helpers to get at the data we want
-const x = d => d.letter;
-const y = d => +d.frequency * 100;
+const x = (d) => d.letter;
+const y = (d) => +d.frequency * 100;
 
 // And then scale the graph by our data
 const xScale = scaleBand({
@@ -33,7 +34,7 @@ const yScale = scaleLinear({
 });
 
 // Compose together the scale and accessor functions to get point functions
-const compose = (scale, accessor) => data => scale(accessor(data));
+const compose = (scale, accessor) => (data) => scale(accessor(data));
 const xPoint = compose(xScale, x);
 const yPoint = compose(yScale, y);
 
@@ -41,6 +42,21 @@ const yPoint = compose(yScale, y);
 export function BarChart(props) {
   return (
     <svg width={width} height={height}>
+      <AxisLeft
+        scale={yScale}
+        top={0}
+        left={0}
+        label={'Y'}
+        stroke={'#1b1a1e'}
+        tickTextFill={'#1b1a1e'}
+      />
+      <AxisBottom
+        scale={xScale}
+        top={yMax}
+        label={'X'}
+        stroke={'#1b1a1e'}
+        tickTextFill={'#1b1a1e'}
+      />
       {data.map((d, i) => {
         const barHeight = yMax - yPoint(d);
         return (
