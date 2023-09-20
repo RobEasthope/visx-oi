@@ -1,6 +1,6 @@
-import { BarChart } from './components/BarChart/BarChart';
-import { LineChart } from './components/LineChart/LineChart';
-import { data } from './components/LineChart/data';
+import { BarChart } from './charts/BarChart/BarChart';
+import { LineChart } from './charts/LineChart/LineChart';
+import { data } from './charts/LineChart/data';
 
 function App() {
   return <LineChart data={data} />;
