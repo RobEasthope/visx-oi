@@ -71,21 +71,6 @@ export function BarChart(props) {
           </Group>
         );
       })}
-      {data.map((d, i) => {
-        const barHeight = yMax - yPoint(d) / 2;
-        return (
-          <Group key={`bar-2-${i}`}>
-            <Bar
-              x={xPoint(d)}
-              y={yMax - barHeight}
-              height={barHeight}
-              width={xScale.bandwidth()}
-              fill="blue"
-              className="opacity-50"
-            />
-          </Group>
-        );
-      })}
     </svg>
   );
 }
