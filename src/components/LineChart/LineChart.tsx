@@ -8,6 +8,8 @@ import {
   XYChart,
 } from '@visx/xychart';
 import { data } from './data';
+import './LineChart.css';
+
 const ChartContainer = styled.div`
   text {
     font-family: 'Untitled Sans', sans-serif;
