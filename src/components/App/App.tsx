@@ -1,8 +1,8 @@
+import { BarChart } from "../BarChart/BarChart";
+
 function App() {
   return (
-    <>
-      <h1>VISX OI</h1>
-    </>
+    <BarChart/>
   );
 }
 
