@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { format } from 'date-fns';
 import {
   AnimatedAxis,
@@ -9,49 +8,6 @@ import {
 } from '@visx/xychart';
 import { data } from './data';
 import './LineChart.css';
-
-const ChartContainer = styled.div`
-  text {
-    font-family: 'Untitled Sans', sans-serif;
-  }
-
-  .visx-axis-tick {
-    text {
-      font-size: 12px;
-      font-weight: 400;
-      fill: #666666;
-    }
-  }
-`;
-
-const ColoredSquare = styled.div`
-  display: inline-block;
-  width: 11px;
-  height: 11px;
-  margin-right: 8px;
-  background: ${({ color }) => color};
-  border-radius: 4px;
-`;
-
-const TooltipContainer = styled.div`
-  padding: 8px 16px;
-  font-size: 12px;
-  border-radius: 4px;
-  color: #222222;
-
-  .date {
-    font-size: 12px;
-    margin-bottom: 8px;
-    color: #222222;
-    font-weight: 600;
-  }
-  .value {
-    display: flex;
-    align-items: center;
-    font-weight: 400;
-    color: #000000;
-  }
-`;
 
 const tickLabelOffset = 10;
 
@@ -111,7 +67,7 @@ export const LineChart = () => {
           }}
           renderTooltip={({ tooltipData }) => {
             return (
-              <TooltipContainer>
+              <div className="tooltip-container">
                 {Object.entries(tooltipData.datumByKey).map((lineDataArray) => {
                   const [key, value] = lineDataArray;
 
@@ -121,13 +77,13 @@ export const LineChart = () => {
                         {format(accessors.xAccessor(value.datum), 'MMM d')}
                       </div>
                       <div className="value">
-                        <ColoredSquare color="#008561" />
+                        <div className="coloured-square" color="#008561" />
                         {accessors.yAccessor(value.datum)}
                       </div>
                     </div>
                   );
                 })}
-              </TooltipContainer>
+              </div>
             );
           }}
         />
