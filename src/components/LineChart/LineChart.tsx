@@ -60,7 +60,7 @@ const accessors = {
 
 export const LineChart = () => {
   return (
-    <ChartContainer>
+    <div className="chart-container">
       <XYChart
         height={270}
         margin={{ left: 60, top: 35, bottom: 38, right: 27 }}
@@ -130,6 +130,6 @@ export const LineChart = () => {
           }}
         />
       </XYChart>
-    </ChartContainer>
+    </div>
   );
 };
