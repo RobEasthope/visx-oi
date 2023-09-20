@@ -36,19 +36,20 @@ export const LineChart = ({ data }) => {
           strokeDasharray="0, 4"
         />
         <AnimatedAxis
+          label={'Time'}
           hideAxisLine
           hideTicks
           orientation="bottom"
           tickLabelProps={() => ({ dy: tickLabelOffset })}
           left={30}
-          numTicks={4}
         />
         <AnimatedAxis
+          label={'Something'}
           hideAxisLine
           hideTicks
           orientation="left"
           numTicks={4}
-          tickLabelProps={() => ({ dx: -10 })}
+          tickLabelProps={() => ({ dx: 0 })}
         />
 
         <AnimatedLineSeries
