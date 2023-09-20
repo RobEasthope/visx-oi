@@ -158,14 +158,6 @@ export const LineChart = () => {
   );
 };
 
-export default function App() {
-  return (
-    <div className="App">
-      <LineChart />
-    </div>
-  );
-}
-
 const ChartContainer = styled.div`
   text {
     font-family: 'Untitled Sans', sans-serif;
