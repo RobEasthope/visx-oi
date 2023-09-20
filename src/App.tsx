@@ -1,9 +1,7 @@
-import { BarChart } from './charts/BarChart/BarChart';
-import { LineChart } from './charts/LineChart/LineChart';
-import { data } from './charts/LineChart/data';
+import { DonutChart } from './charts/DonutChart/DonutChart';
 
 function App() {
-  return <LineChart data={data} />;
+  return <DonutChart width={800} height={800} />;
 }
 
 export default App;
