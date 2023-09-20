@@ -8,6 +8,48 @@ import {
   XYChart,
 } from '@visx/xychart';
 import { data } from './data';
+const ChartContainer = styled.div`
+  text {
+    font-family: 'Untitled Sans', sans-serif;
+  }
+
+  .visx-axis-tick {
+    text {
+      font-size: 12px;
+      font-weight: 400;
+      fill: #666666;
+    }
+  }
+`;
+
+const ColoredSquare = styled.div`
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: 8px;
+  background: ${({ color }) => color};
+  border-radius: 4px;
+`;
+
+const TooltipContainer = styled.div`
+  padding: 8px 16px;
+  font-size: 12px;
+  border-radius: 4px;
+  color: #222222;
+
+  .date {
+    font-size: 12px;
+    margin-bottom: 8px;
+    color: #222222;
+    font-weight: 600;
+  }
+  .value {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    color: #000000;
+  }
+`;
 
 const tickLabelOffset = 10;
 
@@ -91,46 +133,3 @@ export const LineChart = () => {
     </ChartContainer>
   );
 };
-
-const ChartContainer = styled.div`
-  text {
-    font-family: 'Untitled Sans', sans-serif;
-  }
-
-  .visx-axis-tick {
-    text {
-      font-size: 12px;
-      font-weight: 400;
-      fill: #666666;
-    }
-  }
-`;
-
-const ColoredSquare = styled.div`
-  display: inline-block;
-  width: 11px;
-  height: 11px;
-  margin-right: 8px;
-  background: ${({ color }) => color};
-  border-radius: 4px;
-`;
-
-const TooltipContainer = styled.div`
-  padding: 8px 16px;
-  font-size: 12px;
-  border-radius: 4px;
-  color: #222222;
-
-  .date {
-    font-size: 12px;
-    margin-bottom: 8px;
-    color: #222222;
-    font-weight: 600;
-  }
-  .value {
-    display: flex;
-    align-items: center;
-    font-weight: 400;
-    color: #000000;
-  }
-`;
