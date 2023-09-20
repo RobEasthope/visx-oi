@@ -64,7 +64,7 @@ export type PieProps = {
   animate?: boolean;
 };
 
-export default function Example({
+export function DonutChart({
   width,
   height,
   margin = defaultMargin,
