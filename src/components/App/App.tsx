@@ -1,9 +1,8 @@
-import { BarChart } from "../BarChart/BarChart";
+import { BarChart } from '../BarChart/BarChart';
+import { LineChart } from '../LineChart/LineChart';
 
 function App() {
-  return (
-    <BarChart/>
-  );
+  return <LineChart />;
 }
 
 export default App;
