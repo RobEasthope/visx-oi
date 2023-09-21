@@ -1,3 +1,4 @@
+// Currently used in chart
 export const DonutChartData = {
   date: '2015 Jun 15',
   'Google Chrome': '48.09',
@@ -10,6 +11,7 @@ export const DonutChartData = {
   'Other/Unknown': '0.01',
 };
 
+// WIP on a more verbose but easier to use data structure
 export const DonutChartDataArray = [
   {
     name: 'Google Chrome',
