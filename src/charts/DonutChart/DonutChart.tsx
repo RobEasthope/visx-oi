@@ -29,7 +29,6 @@ const browsers: BrowserUsage[] = browserNames.map((name) => ({
 
 // accessor functions
 const usage = (d: BrowserUsage) => d.usage;
-const frequency = (d: LetterFrequency) => d.frequency;
 
 // color scales
 const getBrowserColor = scaleOrdinal({
@@ -42,15 +41,6 @@ const getBrowserColor = scaleOrdinal({
     'rgba(255,255,255,0.3)',
     'rgba(255,255,255,0.2)',
     'rgba(255,255,255,0.1)',
-  ],
-});
-const getLetterFrequencyColor = scaleOrdinal({
-  domain: letters.map((l) => l.letter),
-  range: [
-    'rgba(93,30,91,1)',
-    'rgba(93,30,91,0.8)',
-    'rgba(93,30,91,0.6)',
-    'rgba(93,30,91,0.4)',
   ],
 });
 
@@ -70,9 +60,6 @@ export function DonutChart({
   animate = true,
 }: PieProps) {
   const [selectedBrowser, setSelectedBrowser] = useState<string | null>(null);
-  const [selectedAlphabetLetter, setSelectedAlphabetLetter] = useState<
-    string | null
-  >(null);
 
   if (width < 10) return null;
 
